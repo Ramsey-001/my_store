@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Products" %>
+
+<h1>Products</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+    <%= link_to "Add to Cart", cart_items_path(product_id: product.id, quantity: 1), method: :post %>
+
+  <% end %>
+</div>
+
+

@@ -1,0 +1,16 @@
+<h1>Order Placed Successfully!</h1>
+
+<p>Thank you for your purchase, <%= current_user.email %>!</p>
+
+<h3>Order Summary:</h3>
+<ul>
+  <% @order.order_items.each do |item| %>
+    <li>
+      <%= item.product.name %> - Quantity: <%= item.quantity %> - Price: <%= number_to_currency(item.price * item.quantity) %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Total: <%= number_to_currency(@order.total) %></h3>
+
+<%= link_to "Back to Products", products_path, class: "btn btn-primary" %>

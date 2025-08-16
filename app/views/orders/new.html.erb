@@ -1,0 +1,7 @@
+<h1>Checkout</h1>
+
+<h3>Total: <%= number_to_currency(current_user.cart.total_price) %></h3>
+
+<%= form_with url: orders_path, method: :post do %>
+  <%= submit_tag "Place Order" %>
+<% end %>
