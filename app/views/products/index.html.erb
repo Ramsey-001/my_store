@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Products" %>
-
 <h1>Products</h1>
 
 <div id="products">
@@ -13,6 +12,7 @@
     <%= link_to "Add to Cart", cart_items_path(product_id: product.id, quantity: 1), method: :post %>
 
   <% end %>
+
 </div>
 
 
